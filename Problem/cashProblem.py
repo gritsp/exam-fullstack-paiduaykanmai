@@ -4,13 +4,18 @@
 # 125
 # Output
 # 3
+
+def changeMoney(cash):
+    listCash = [100,20,10,5,1]
+    n = 0
+    for i in listCash:
+        temp = cash//i
+        n+=temp
+        cash = cash-(i*temp)
+    return n
+
 print("input")
 cash = int(input("> "))
-listCash = [100,20,10,5,1]
-n = 0
-for i in listCash:
-    temp = cash//i
-    n+=temp
-    cash = cash-(i*temp)
+changeM = changeMoney(cash)
 print("output")
-print(n)
+print(changeM)

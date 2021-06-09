@@ -5,15 +5,26 @@
 # RRG
 # Output
 # 1
-print("input")
-rangeIndex = int(input("N> "))
-text = input("Rock color> ")
-print(text)
-score = 0
-for i in range(rangeIndex):
-    if i>0:
-        if text[i]==text[i-1]:
-            score+=1
 
+def checktext():
+    txt = input("Rcok color> ")
+    for i in txt:
+        if i not in ["R","G","B","r","g","b"]:
+            print("Please insert rock only R G B r g b")
+            return checktext()
+    return txt
+
+def checkcolor(text,n):
+    score = 0
+    for i in range(n):
+        if i>0:
+            if text[i]==text[i-1]:
+                score+=1
+    return score
+
+print("input")
+n = int(input("N> "))
+txt = checktext()
+print(txt)
 print("output")
-print(score)
+print(checkcolor(txt,n))

@@ -18,13 +18,14 @@ for i in timber:
     temp.append(int(i))
 timber = temp
 timber.sort()
-j=0
-def checktimber(timber,N,j):
+a = 0
+def checktimber(timber,N,a):
     temp = N
     if temp%timber[0]!=0:
-        j+=1
-        return checktimber(timber,temp-timber[1],j)
+        a+=1
+        return checktimber(timber,temp-timber[1],a)
     else:
-        return (temp//timber[0])+j
+        return (temp//timber[0])+a
+        
 print("output")
-print(checktimber(timber,N,j))
+print(checktimber(timber,N,a))
